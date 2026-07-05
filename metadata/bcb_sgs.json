@@ -1,0 +1,19 @@
+{
+    "selic": {
+        "series_id": 11,
+        "name": "Taxa SELIC",
+        "description": "Taxa básica de juros",
+        "frequency": "daily",
+        "source": "Banco Central",
+        "unit": "% a.a."
+    },
+
+    "ipca-d": {
+        "series_id": 10843,
+        "name": "IPCA - Duráveis",
+        "description": "Índice de Preços ao Consumidor-Amplo (IPCA) - Duráveis",
+        "frequency": "daily",
+        "source": "Banco Central",
+        "unit": "% a.a."
+    }
+}
