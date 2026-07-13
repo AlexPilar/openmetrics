@@ -57,8 +57,6 @@ silver_data = silver_data.sort_values(
     ["indicator", "date"]
 )
 
-
-
 silver_data = silver_data[
     [
         "indicator",

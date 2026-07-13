@@ -1,0 +1,4 @@
+sources:
+  - name: bronze
+    tables:
+      - name: bronze_sgs

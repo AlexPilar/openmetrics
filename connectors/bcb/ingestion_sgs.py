@@ -1,21 +1,24 @@
 import requests
 import json
 from pathlib import Path
+import pandas as pd
 
 RAW_PATH = Path("data/raw")
-CATALOG_PATH = Path("metadata/bcb_sgs.json")
+CATALOG_PATH = Path("openmetrics_dbt/seeds/indicators.csv")
 
 START_DATE = "01/01/2026"
 END_DATE = "30/06/2026"
 
 RAW_PATH.mkdir(parents=True, exist_ok=True)
 
-with CATALOG_PATH.open("r", encoding="utf-8") as f:
-    catalog = json.load(f)
 
-for indicator_name, indicator_metadata in catalog.items():
+catalog = pd.read_csv(CATALOG_PATH)
+
+for _, row in catalog.iterrows():
     try:
-        series_id = indicator_metadata["series_id"]
+
+        indicator_name = row["indicator"]
+        series_id = row["series_id"]
 
         url = (
             f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.{series_id}"
