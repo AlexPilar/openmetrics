@@ -35,7 +35,7 @@ def fetch_data(indicator_name, url):
     
     except requests.exceptions.RequestException as e:
         logger.error(f"{indicator_name}: erro ao acessar a API - {e}")
-        return None
+        raise
 
 def save_json(data: list, indicator_name: str) -> bool:
     if not data:
